@@ -9,14 +9,14 @@ class PostController extends Controller
 
 
 {
-    public function index()
+    public function myPosts()
     {
-        // Fetch all posts with the author relationship
-        $posts = Post::with('user')->get();
-
-        return view('posts.index', compact('posts'));
+        $posts = Post::with(['comments.user']) // Include comments and their authors
+            ->where('user_id', auth()->id()) // Restrict to only the logged-in user's posts
+            ->get();
+    
+            return view('posts.index', compact('posts'));
     }
-
 
     // Display the form to create a new post
     public function create()
@@ -43,7 +43,7 @@ class PostController extends Controller
         ]);
 
         // Redirect to the posts index (or any other page)
-        return redirect()->route('posts.index')->with('success', 'Post created successfully!');
+        return redirect()->route('posts.my-posts')->with('success', 'Post created successfully!');
     }
 
     // Delete a post
@@ -58,6 +58,7 @@ class PostController extends Controller
         $post->delete();
 
         // Redirect to the posts index with a success message
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully!');
+        return redirect()->route('posts.my-posts')->with('success', 'Post deleted successfully!');
     }
+
 }

@@ -15,8 +15,18 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('posts.my-posts')" :active="request()->routeIs('posts.my-posts')">
+                        {{ __('Post') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
+                        {{ __('Create Post') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('posts.comment')" :active="request()->routeIs('posts.comment')">
+                        {{ __('Post Comments') }}
+                    </x-nav-link>
                 </div>
             </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
