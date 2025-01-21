@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         // Fetch all posts with the author relationship
         $posts = Post::with('user')->get();
-    
+
         return view('posts.index', compact('posts'));
     }
 

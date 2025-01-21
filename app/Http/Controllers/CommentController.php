@@ -8,37 +8,44 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    public function index()
+    {
+        // Get all posts with their author and comments
+        $posts = Post::with(['user', 'comments.user'])->get();
+        return view('posts.comment', compact('posts'));
+    }
+
     public function store(Request $request, Post $post)
     {
         $request->validate([
-            'content' => 'required|string|max:1000',
+            'comment' => 'required|string|max:1000',
         ]);
 
         Comment::create([
-            'content' => $request->content,
+            'comment' => $request->input('comment'),
             'user_id' => auth()->id(),
             'post_id' => $post->id,
         ]);
-
+        \Log::info('New comment:', ['comment' => $request->input('comment')]);
         return redirect()->route('posts.index')->with('success', 'Comment added successfully!');
     }
 
     public function edit(Comment $comment)
     {
-        $this->authorize('update', $comment); // Ensure the user owns the comment
+//        $this->authorize('update', $comment); // Ensure the user owns the comment
 
         return view('comments.edit', compact('comment'));
     }
 
     public function update(Request $request, Comment $comment)
     {
-        $this->authorize('update', $comment);
+//        $this->authorize('update', $comment);
 
         $request->validate([
-            'content' => 'required|string|max:1000',
+            'comment' => 'required|string|max:1000',
         ]);
 
-        $comment->update(['content' => $request->content]);
+        $comment->update(['comment' => $request->comment]);
 
         return redirect()->route('posts.index')->with('success', 'Comment updated successfully!');
     }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2 class="text-black dark:text-white">Create a New Post</h2>
-        
+
         <form action="{{ route('posts.store') }}" method="POST">
             @csrf
 
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn mt-3 px-6 py-2 text-white font-semibold rounded-lg">
+            <button type="submit" class="btn mt-3 px-6 py-2 text-black dark:text-white font-semibold rounded-lg">
                 Create Post
             </button>
         </form>

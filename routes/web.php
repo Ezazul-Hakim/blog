@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/comment', [CommentController::class, 'index'])->name('posts.comment'); // List posts
     Route::post('posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
     Route::get('comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
     Route::put('comments/{comment}', [CommentController::class, 'update'])->name('comments.update');

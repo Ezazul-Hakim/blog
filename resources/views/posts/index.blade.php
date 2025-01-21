@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mx-auto py-6">
-        <h2 class="text-black dark:text-white mb-4">All Posts</h2>
+        <h2 class="text-black dark:text-white mb-4">My Posts</h2>
 
         <!-- Display success message if any -->
         @if (session('success'))
@@ -31,7 +31,7 @@
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-red-600 dark:hover:bg-red-700">
+                                    <button type="submit" class="px-4 py-2 bg-red-500 text-red rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-red-600 dark:hover:bg-red-700">
                                         Delete
                                     </button>
                                 </form>
