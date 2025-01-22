@@ -13,11 +13,11 @@
                     <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                         Title
                     </label>
-                    <input 
-                        type="text" 
-                        id="title" 
-                        name="title" 
-                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300" 
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300"
                         required
                         placeholder="Enter your post title">
                 </div>
@@ -27,11 +27,11 @@
                     <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                         Description
                     </label>
-                    <textarea 
-                        id="description" 
-                        name="description" 
-                        rows="5" 
-                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300" 
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300"
                         required
                         placeholder="Write a detailed description"></textarea>
                 </div>
@@ -41,20 +41,20 @@
                     <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                         Category
                     </label>
-                    <input 
-                        type="text" 
-                        id="category" 
-                        name="category" 
-                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300" 
+                    <input
+                        type="text"
+                        id="category"
+                        name="category"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-gray-300"
                         required
                         placeholder="Enter the post category">
                 </div>
 
                 <!-- Submit Button -->
                 <div>
-                    <button 
-                        type="submit" 
-                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <button
+                        type="submit"
+                        class="w-full bg-indigo-600 hover:bg-indigo-800 text-gray-700 font-semibold py-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
                         Create Post
                     </button>
                 </div>

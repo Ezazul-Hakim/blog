@@ -18,9 +18,6 @@
                     <x-nav-link :href="route('posts.my-posts')" :active="request()->routeIs('posts.my-posts')">
                         {{ __('Post') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
-                        {{ __('Create Post') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('posts.comment')" :active="request()->routeIs('posts.comment')">
                         {{ __('Post Comments') }}
                     </x-nav-link>

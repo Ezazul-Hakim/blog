@@ -51,11 +51,12 @@ class CommentController extends Controller
 
     public function destroy(Comment $comment)
     {
-        if ($comment->post->user_id === auth()->id() || $comment->user_id === auth()->id()) {
-            $comment->delete();
-            return redirect()->route('posts.comment')->with('success', 'Comment deleted successfully!');
-        }
+         if($comment->post->user_id === auth()->id() || $comment->user_id === auth()->id()) {
+             $comment->delete();
+             return redirect()->route('posts.comment')->with('success', 'Comment deleted successfully!');
 
+         }
+         abort(403,'Unauthorized action.');
     }
 }
 

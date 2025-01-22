@@ -3,6 +3,14 @@
 @section('content')
     <div class="container mx-auto py-6">
         <h2 class="text-black dark:text-white mb-4">My Posts</h2>
+        <button
+            type="button"
+            onclick="window.location.href='{{ route('posts.create') }}'"
+            class="bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200
+            dark:hover:bg-gray-600 rounded-lg shadow-md p-6 mb-6">
+            Create New Post
+        </button>
+
 
         <!-- Display success message if any -->
         @if (session('success'))

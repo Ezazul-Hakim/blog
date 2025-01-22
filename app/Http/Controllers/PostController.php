@@ -14,7 +14,7 @@ class PostController extends Controller
         $posts = Post::with(['comments.user']) // Include comments and their authors
             ->where('user_id', auth()->id()) // Restrict to only the logged-in user's posts
             ->get();
-    
+
             return view('posts.index', compact('posts'));
     }
 
@@ -51,14 +51,17 @@ class PostController extends Controller
     {
         // Check if the logged-in user is the post owner
         if ($post->user_id !== auth()->id()) {
-            return abort(403, 'Unauthorized action');
+//            return abort(403, 'Unauthorized action');
+
+
+            // Delete the post
+            $post->delete();
+
+            // Redirect to the posts index with a success message
+            return redirect()->route('posts.my-posts')->with('success', 'Post deleted successfully!');
         }
+        abort(403,'Unauthorized action.');
 
-        // Delete the post
-        $post->delete();
-
-        // Redirect to the posts index with a success message
-        return redirect()->route('posts.my-posts')->with('success', 'Post deleted successfully!');
     }
 
 }
