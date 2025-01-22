@@ -16,10 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('posts.my-posts')" :active="request()->routeIs('posts.my-posts')">
-                        {{ __('Post') }}
+                        {{ __('My Post') }}
                     </x-nav-link>
                     <x-nav-link :href="route('posts.comment')" :active="request()->routeIs('posts.comment')">
-                        {{ __('Post Comments') }}
+                        {{ __('All Posts & Comments') }}
                     </x-nav-link>
                 </div>
             </div>
